@@ -36,6 +36,10 @@
 *.exe
 *.out
 *.app
+data-sort-mini
 
 # debug information files
 *.dwo
+
+# test files
+test
