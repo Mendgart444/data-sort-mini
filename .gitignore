@@ -43,3 +43,6 @@ data-sort-mini
 
 # test files
 test
+
+# ide data
+.vscode
