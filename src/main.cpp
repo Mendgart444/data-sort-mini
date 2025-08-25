@@ -2,11 +2,14 @@
 #include <filesystem>
 #include <map>
 #include <algorithm>
+
 #define ver "0.0.1\n"
 
 namespace fs = std::filesystem;
 
 int main(int argc, char** argv) {
+    std::cout << "Data Sort Mini Tool " << ver;
+
     if (argc < 2) {
         std::cerr << "Error: please provide a path";
         return 1;
@@ -44,6 +47,9 @@ int main(int argc, char** argv) {
             {".json", "Programming/Web/json"},
             {".css", "Programming/Web/css"},
             {".mp4", "Videos"},
+            {".bat", "Shellscripts/cmd"},
+            {".sh", "Shellscripts/sh"},
+            {".ps1", "Shellscripts/powershell"},
         };
 
         try {
