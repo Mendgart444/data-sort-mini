@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <map>
 #include <algorithm>
+#include <set>
 
 #define ver "0.0.1\n"
 
@@ -26,6 +27,7 @@ int main(int argc, char** argv) {
         std::cout << "-h: display help text\n";
     } else {
         std::string path = arg;
+        std::string arg1 = argv[2];
         std::map<std::string, std::string> category = {
             {".jpg", "Pictures"},
             {".png", "Pictures"},
@@ -50,7 +52,23 @@ int main(int argc, char** argv) {
             {".bat", "Shellscripts/cmd"},
             {".sh", "Shellscripts/sh"},
             {".ps1", "Shellscripts/powershell"},
+            {".exe", "Software-Windows"},
+            {" ", "Software-Linux"},
+            {".log", "Logs"},
+            {".cat", "Catalogs"},
+            {".dll", "Software Extensions"},
         };
+        std::set<std::string> exclude;
+
+        if (arg1 == "--exclude") {
+            for (int i = 3; i < argc; i++) {
+                exclude.insert(argv[i]);
+            }
+
+            for (const auto& key : exclude) {
+                category.erase(key);
+            }
+        }
 
         try {
             for (const auto& entry : fs::directory_iterator(path)) {
@@ -76,6 +94,7 @@ int main(int argc, char** argv) {
             return 1;
         }
     }
+    std::cout << "Sucess!\n";
 
     return 0;
 }
