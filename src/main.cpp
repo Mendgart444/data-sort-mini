@@ -21,10 +21,13 @@ int main(int argc, char** argv) {
     if (arg == "-v") {
         std::cout << "version: " << ver;
     } else if (arg == "-h") {
-        std::cout << "data-sort-mini tool version: " << ver << "Usage: data-sort-mini <DIR>\n\n";
+        std::cout << "data-sort-mini tool version: " << ver << "Usage: data-sort-mini <DIR> --exclude* .cpp .pdf\n\n";
+        
         std::cout << "commands:\n";
         std::cout << "-v: display version\n";
-        std::cout << "-h: display help text\n";
+        std::cout << "-h: display help text\n\n";
+
+        std::cout << "* = optional\n"
     } else {
         std::string path = arg;
         std::string arg1 = argv[2];
