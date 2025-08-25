@@ -46,3 +46,8 @@ test
 
 # ide data
 .vscode
+
+/bin/*
+
+!/bin/data-sort-mini
+!/bin/data-sort-mini.exe
