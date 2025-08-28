@@ -1,4 +1,4 @@
-# Data Sort Mini Tool Version 0.0.1
+# Data Sort Mini Tool Version 0.0.2
 
 This Tool cleans up your folders for you without AI!!
 
